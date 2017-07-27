@@ -1,0 +1,25 @@
+.sidenav {
+    overflow: hidden;
+}
+
+.content-area {
+    width: 82%;
+    height: -webkit-calc(100vh - 60px);
+    height:    -moz-calc(100vh - 60px);
+    height:         calc(100vh - 60px);
+}
+
+.content-container {
+}
+
+.sidenav .sidenav-content .nav-group .nav-link {
+    border-radius: 3px 0 0 3px;
+    padding-left: 12px;
+    margin-left: 30px;
+    width: 100%;
+    font-weight: 500;
+}
+
+.sidenav .sidenav-content>.nav-group>.nav-link:hover {
+    background: #eee;
+}

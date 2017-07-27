@@ -6,16 +6,14 @@
       </a>
     </div>
     <div class="header-nav clr-nav-level-1">
-      <a class="nav-link" id="home-link" routerlink="/" routerlinkactive="active" href="/clarity/"><span class="nav-text">Home</span></a>
-      <a class="nav-link" routerlink="/get-started" routerlinkactive="active" href="/clarity/get-started"><span class="nav-text">Projects</span></a>
-      <a class="nav-link active" routerlink="/documentation" routerlinkactive="active" href="/clarity/documentation"><span class="nav-text">Sport</span></a>
-      <a class="nav-link" routerlink="/community" routerlinkactive="active" href="/clarity/community"><span class="nav-text">Music</span></a>
-      <a class="nav-link" routerlink="/news" routerlinkactive="active" href="/clarity/news"><span class="nav-text">Nerdy</span></a>
+      <a class="nav-link" [routerLink]="['../home']" routerLinkActive="active" href="#"><span class="nav-text">Home</span></a>
+      <a class="nav-link" [routerLink]="['../projects']" routerLinkActive="active" href="#"><span class="nav-text">Projects</span></a>
+      <a class="nav-link" [routerLink]="['../sport']" routerLinkActive="active" href="#"><span class="nav-text">Sport</span></a>
+      <a class="nav-link" [routerLink]="['../music']" routerLinkActive="active" href="#"><span class="nav-text">Music</span></a>
+      <a class="nav-link" [routerLink]="['../nerdy']" routerLinkActive="active" href="#"><span class="nav-text">Nerdy</span></a>
     </div>
   </clr-header>
   <div class="content-container">
-    <div class="content-area">
       <router-outlet></router-outlet>
-    </div>
   </div>
 </clr-main-container>
