@@ -9,7 +9,6 @@ import { ROUTING } from "./app.routing";
 import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
 import { ProjectsComponent } from './projects/projects.component';
-import { TravelComponent } from './travel/travel.component';
 
 @NgModule({
     declarations: [
@@ -17,7 +16,6 @@ import { TravelComponent } from './travel/travel.component';
         AboutComponent,
         HomeComponent,
         ProjectsComponent,
-        TravelComponent
     ],
     imports: [
         BrowserAnimationsModule,
