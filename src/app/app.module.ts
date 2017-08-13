@@ -9,6 +9,7 @@ import { ROUTING } from "./app.routing";
 import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
 import { ProjectsComponent } from './projects/projects.component';
+import { RowingComponent } from './rowing/rowing.component';
 
 @NgModule({
     declarations: [
@@ -16,6 +17,7 @@ import { ProjectsComponent } from './projects/projects.component';
         AboutComponent,
         HomeComponent,
         ProjectsComponent,
+        RowingComponent,
     ],
     imports: [
         BrowserAnimationsModule,
