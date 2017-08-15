@@ -10,3 +10,21 @@
 hr {
     border-top-color: #eeeeee;
 }
+
+hr.no-margin {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.card-block .p3 {
+    margin-top: 6px;
+    line-height: 19px;
+}
+
+h5 {
+    margin-top: 12px;
+}
+
+h2 {
+    margin-top: 0;
+}

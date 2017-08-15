@@ -10,6 +10,7 @@ import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
 import { ProjectsComponent } from './projects/projects.component';
 import { RowingComponent } from './rowing/rowing.component';
+import { GeekyComponent } from './geeky/geeky.component';
 
 @NgModule({
     declarations: [
@@ -18,6 +19,7 @@ import { RowingComponent } from './rowing/rowing.component';
         HomeComponent,
         ProjectsComponent,
         RowingComponent,
+        GeekyComponent,
     ],
     imports: [
         BrowserAnimationsModule,
