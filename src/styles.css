@@ -49,13 +49,23 @@ ol.carousel-indicators li.active {
     background-color: black;
 }
 
-.carousel-control:focus{
+.carousel-control:focus {
     color: #007cbb;
     background-color: transparent;
     opacity: .5;
 }
 
-.carousel-control:hover{
+.carousel-control:hover {
     color: #ffffff !important;
     opacity: 1 !important;
+}
+
+.flexthis {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
