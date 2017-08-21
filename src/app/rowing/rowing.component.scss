@@ -1,7 +1,7 @@
 .carousel-inner > .item {
-    height: -webkit-calc(100vh - 120px);
-    height:    -moz-calc(100vh - 120px);
-    height:         calc(100vh - 120px);
+    height: -webkit-calc(100vh - 96px);
+    height:    -moz-calc(100vh - 96px);
+    height:         calc(100vh - 96px);
 }
 
 .carousel-inner > .item > img {
@@ -11,7 +11,20 @@
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    max-height: 800px;
+    max-height: -webkit-calc(100vh - 144px);
+    max-height:    -moz-calc(100vh - 144px);
+    max-height:         calc(100vh - 144px);
     width: auto;
+}
+
+#firstImage {
+    max-height: 800px;
+}
+
+.carousel-caption {
+    max-width: 50vw;
+    bottom: -30px;
+    color: black;
+    text-shadow: none;
 }
 

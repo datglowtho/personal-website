@@ -48,3 +48,14 @@ ol.carousel-indicators li.active {
     border: none;
     background-color: black;
 }
+
+.carousel-control:focus{
+    color: #007cbb;
+    background-color: transparent;
+    opacity: .5;
+}
+
+.carousel-control:hover{
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
