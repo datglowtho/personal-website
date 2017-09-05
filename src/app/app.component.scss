@@ -12,3 +12,13 @@ clr-header {
     overflow: hidden;
     z-index: 9999;
 }
+
+.nav-link.nav-icon {
+    width: auto;
+    margin-right: 24px;
+    opacity: 1
+}
+
+.nav-link.nav-icon.mobile-margin {
+    margin-right: 12px;
+}

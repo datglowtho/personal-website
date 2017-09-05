@@ -1,15 +1,20 @@
 <clr-main-container>
-  <clr-header>
+  <clr-header style="background: linear-gradient(to right, #002538, lightgray);">
     <div class="branding">
       <a href="#" class="nav-link">
         <span class="title">Harry Uglow</span>
       </a>
     </div>
-    <div class="header-nav clr-nav-level-1">
+    <div class="header-nav" [clr-nav-level]="1">
       <a class="nav-link" [routerLink]="['../home']" routerLinkActive="active" href="#"><span class="nav-text">Home</span></a>
       <a class="nav-link" [routerLink]="['../projects']" routerLinkActive="active" href="#"><span class="nav-text">Projects</span></a>
       <a class="nav-link" [routerLink]="['../rowing']" routerLinkActive="active" href="#"><span class="nav-text">Rowing</span></a>
       <a class="nav-link" [routerLink]="['../geeky']" routerLinkActive="active" href="#"><span class="nav-text">Geeky</span></a>
+    </div>
+    <div class="header-actions">
+      <a href="http://www.imperial.ac.uk/computing" class="nav-link nav-icon" [class.mobile-margin]="useMobileStyle">
+          <img src="../images/IC_logo.png" alt="Imperial College London" style="max-height: 70%"/>
+      </a>
     </div>
   </clr-header>
   <div class="content-container" style="margin-top: 60px">

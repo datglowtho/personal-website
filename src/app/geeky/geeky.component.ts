@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-interests',
   templateUrl: './geeky.component.html',
-  styleUrls: ['./geeky.component.scss']
+  styleUrls: ['./geeky.component.scss'],
+    host: {
+        '(window:resize)': 'onResize($event)'
+    }
 })
-export class GeekyComponent implements OnInit {
+export class GeekyComponent {
+    useMobileStyle: boolean;
 
-  constructor() { }
+    constructor() {
+        this.useMobileStyle = (window.innerWidth < 768);
+    }
 
-  ngOnInit() {
-  }
-
+    onResize(event) {
+        this.useMobileStyle = (event.target.innerWidth < 768);
+    }
 }

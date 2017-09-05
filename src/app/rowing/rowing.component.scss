@@ -6,25 +6,54 @@
 
 .carousel-inner > .item > img {
     position: absolute;
+    top: -webkit-calc(50% - 18px);
+    top:    -moz-calc(50% - 18px);
+    top:         calc(50% - 18px);
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    max-height: -webkit-calc(100vh - 126px);
+    max-height:    -moz-calc(100vh - 126px);
+    max-height:         calc(100vh - 126px);
+    width: auto;
+}
+
+#firstImage {
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    max-height: -webkit-calc(100vh - 144px);
-    max-height:    -moz-calc(100vh - 144px);
-    max-height:         calc(100vh - 144px);
+    max-height: 800px;
     width: auto;
 }
 
-#firstImage {
-    max-height: 800px;
+#firstImage.mobile-height {
+    top: 50%;
+    width: auto;
 }
 
 .carousel-caption {
-    max-width: 50vw;
+    left:0;
+    right:0;
+    width:auto;
     bottom: -30px;
     color: black;
     text-shadow: none;
+
+}
+.mobile .carousel-caption {
+    bottom: -12px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row .col-md-5.desktop-border {
+    border-right: 1px solid #c2c2c2;
+}
+
+.carousel.mobile {
+    background: radial-gradient(dimgray, lightgray, white);
 }
 

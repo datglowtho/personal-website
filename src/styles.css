@@ -1,13 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-.row .col-md-4 {
-    border-right: 1px solid #c2c2c2;
-}
-.row .col-md-5 {
-    border-right: 1px solid #c2c2c2;
-}
-
 hr {
-    border-top-color: #eeeeee;
+    border-color: lightgray;
 }
 
 hr.no-margin {
