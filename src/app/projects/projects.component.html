@@ -1,110 +1,112 @@
-<div class="content-area">
-    <h2>ARi</h2>
-    <div class="row">
-        <div class="flexthis">
-            <div class="col-xs-12 col-md-8">
-                <p>Combining great ideas from multiple fragmented
-                    services available to Department of Computing
-                    students into one simple, unified web app.</p>
+<div class="content-container" >
+    <div class="content-area">
+        <h2>ARi</h2>
+        <div class="row">
+            <div class="flexthis">
+                <div class="col-xs-12 col-md-8">
+                    <p>Combining great ideas from multiple fragmented
+                        services available to Department of Computing
+                        students into one simple, unified web app.</p>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    IMAGE GOES HERE
+                </div>
             </div>
-            <div class="col-xs-12 col-md-4">
-                IMAGE GOES HERE
+        </div>
+        <hr style="margin-top: 24px">
+        <h2  id="BBts-title">BananaBeats</h2>
+        <div class="row">
+            <div class="flexthis">
+                <div class="col-xs-12 col-md-8">
+                    <p class="p2" id="BBts-spec">The Spec</p>
+                    <p class="concise">At the end of the first year of Computing at Imperial there
+                    is a C project for groups of 4 to implement an assembler for ARM assembly code
+                    and an emulator to simulate the execution of the code on a Raspberry Pi.
+                    The extension part of the project is to design, implement and document
+                    an extension of our choice to do with the Raspberry Pi. It could
+                    be written in either C (and run within the Raspbian OS), or bare-metal assembly.
+                    We opted for the former.</p>
+                    <p class="p2" id="BBts-features">Project Features</p>
+                    <p class="concise">Our group's idea was to make a basic touch-sensitive keyboard
+                    for the Raspberry Pi with a GUI written in C to accompany it.
+                    The keyboard uses 12 bananas instead of conventional keys,
+                    hence the name "BananaBeats". The GUI features radio buttons
+                    to change instrument, a volume slider and 12 icons which light
+                    up when the corresponding banana is being touched. This can be seen
+                    in Fig. 3. The instruments are "Drums", "Piano" and "Mario",
+                    the latter being a soundboard of Super Mario sound effects
+                        that we decided to put in for fun.</p>
+                    <p class="p2" id="BBts-how-it-works">How it Works</p>
+                    <p class="concise">On the hardware side, to make the keyboard we used a Capacitive Touch HAT add-on from
+                    Adafruit. This has 12 capacitive touch pins, meaning when something
+                    that conducts electricity touches a pin (like a finger), a charge is transferred to it.
+                    This creates a voltage drop allowing the Pi to know a pin has been
+                    touched. Bananas work as keys because they conduct electricity due
+                    to their high water content, and they are connected to the pins by
+                        pushing wires into the bananas and connecting the wires to the pins.</p><p class="concise">
+                    As for the software, we wrote the GUI in C using GTK+. The software
+                    for connecting to the touch HAT, however, was easiest written in
+                    Python. Therefore we run the GUI in one thread and run a Python
+                    script to detect key presses and play sounds in another. We
+                    use the C/Python interface to allow the Python code to call
+                        our C functions for lighting up the icons on the GUI.</p>
+                    <p class="p2" id="BBts-extras">Extras</p>
+                        <p class="concise">BananaBeats won 3rd place out of around 40 groups doing
+                    this project that year. Following this, we were invited to
+                    demo the project at Imperial Open Days and interview days. To
+                            date we have presented the project at 8 Imperial events.</p>
+                    <p class="concise">The code for the extension part of the project is on
+                    <a href="https://github.com/harry-uglow/BananaBeats">Github</a>.</p>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    IMAGE GOES HERE
+                </div>
+            </div>
+        </div>
+        <hr style="margin-top: 24px">
+        <h2 id="jump-site"><a href="jump-site"></a>This Website</h2>
+        <div class="row">
+            <div class="flexthis">
+                <div class="col-xs-12 col-md-8">
+                    <p>Made in the 2017 summer break to document things I've done
+                    as well as improve my skills in web development and Angular.</p>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    IMAGE GOES HERE
+                </div>
             </div>
         </div>
     </div>
-    <hr style="margin-top: 24px">
-    <h2  id="BBts-title">BananaBeats</h2>
-    <div class="row">
-        <div class="flexthis">
-            <div class="col-xs-12 col-md-8">
-                <p class="p2" id="BBts-spec">The Spec</p>
-                <p class="concise">At the end of the first year of Computing at Imperial there
-                is a C project for groups of 4 to implement an assembler for ARM assembly code
-                and an emulator to simulate the execution of the code on a Raspberry Pi.
-                The extension part of the project is to design, implement and document
-                an extension of our choice to do with the Raspberry Pi. It could
-                be written in either C (and run within the Raspbian OS), or bare-metal assembly.
-                We opted for the former.</p>
-                <p class="p2" id="BBts-features">Project Features</p>
-                <p class="concise">Our group's idea was to make a basic touch-sensitive keyboard
-                for the Raspberry Pi with a GUI written in C to accompany it.
-                The keyboard uses 12 bananas instead of conventional keys,
-                hence the name "BananaBeats". The GUI features radio buttons
-                to change instrument, a volume slider and 12 icons which light
-                up when the corresponding banana is being touched. This can be seen
-                in Fig. 3. The instruments are "Drums", "Piano" and "Mario",
-                the latter being a soundboard of Super Mario sound effects
-                    that we decided to put in for fun.</p>
-                <p class="p2" id="BBts-how-it-works">How it Works</p>
-                <p class="concise">On the hardware side, to make the keyboard we used a Capacitive Touch HAT add-on from
-                Adafruit. This has 12 capacitive touch pins, meaning when something
-                that conducts electricity touches a pin (like a finger), a charge is transferred to it.
-                This creates a voltage drop allowing the Pi to know a pin has been
-                touched. Bananas work as keys because they conduct electricity due
-                to their high water content, and they are connected to the pins by
-                    pushing wires into the bananas and connecting the wires to the pins.</p><p class="concise">
-                As for the software, we wrote the GUI in C using GTK+. The software
-                for connecting to the touch HAT, however, was easiest written in
-                Python. Therefore we run the GUI in one thread and run a Python
-                script to detect key presses and play sounds in another. We
-                use the C/Python interface to allow the Python code to call
-                    our C functions for lighting up the icons on the GUI.</p>
-                <p class="p2" id="BBts-extras">Extras</p>
-                    <p class="concise">BananaBeats won 3rd place out of around 40 groups doing
-                this project that year. Following this, we were invited to
-                demo the project at Imperial Open Days and interview days. To
-                        date we have presented the project at 8 Imperial events.</p>
-                <p class="concise">The code for the extension part of the project is on
-                <a href="https://github.com/harry-uglow/BananaBeats">Github</a>.</p>
-            </div>
-            <div class="col-xs-12 col-md-4">
-                IMAGE GOES HERE
-            </div>
-        </div>
-    </div>
-    <hr style="margin-top: 24px">
-    <h2 id="jump-site"><a href="jump-site"></a>This Website</h2>
-    <div class="row">
-        <div class="flexthis">
-            <div class="col-xs-12 col-md-8">
-                <p>Made in the 2017 summer break to document things I've done
-                as well as improve my skills in web development and Angular.</p>
-            </div>
-            <div class="col-xs-12 col-md-4">
-                IMAGE GOES HERE
-            </div>
-        </div>
-    </div>
+    <nav class="sidenav" *ngIf="showSidenav">
+        <section class="sidenav-content">
+            <section class="nav-group">
+                <input id="ARi-sidenav-group" type="checkbox">
+                <a class="nav-link" onClick="document.getElementById('jump-to').scrollIntoView();">ARi</a>
+                <ul class="nav-list">
+                    <li><a class="nav-link">Link 1</a></li>
+                    <li><a class="nav-link">Link 2</a></li>
+                    <li><a class="nav-link">Link 3</a></li>
+                </ul>
+            </section>
+            <section class="nav-group">
+                <input id="BBts-sidenav-group" type="checkbox">
+                <a class="nav-link" onClick="document.getElementById('BBts-title').scrollIntoView({behavior: 'smooth'});">BananaBeats</a>
+                <ul class="nav-list">
+                    <li><a class="nav-link" onClick="document.getElementById('BBts-spec').scrollIntoView({behavior: 'smooth'});">The Spec</a></li>
+                    <li><a class="nav-link" onClick="document.getElementById('BBts-features').scrollIntoView({behavior: 'smooth'});">Project Features</a></li>
+                    <li><a class="nav-link" onClick="document.getElementById('BBts-how-it-works').scrollIntoView({behavior: 'smooth'});">How It Works</a></li>
+                    <li><a class="nav-link" onClick="document.getElementById('BBts-extras').scrollIntoView({behavior: 'smooth'});">Extras</a></li>
+                </ul>
+            </section>
+            <section class="nav-group">
+                <input id="site-sidenav-group" type="checkbox">
+                <a class="nav-link" onClick="document.getElementById('jump-to').scrollIntoView();">This Website</a>
+                <ul class="nav-list">
+                    <li><a class="nav-link">Link 1</a></li>
+                    <li><a class="nav-link">Link 2</a></li>
+                    <li><a class="nav-link">Link 3</a></li>
+                </ul>
+            </section>
+        </section>
+    </nav>
 </div>
-<nav class="sidenav" *ngIf="showSidenav">
-    <section class="sidenav-content">
-        <section class="nav-group">
-            <input id="ARi-sidenav-group" type="checkbox">
-            <a class="nav-link" onClick="document.getElementById('jump-to').scrollIntoView();">ARi</a>
-            <ul class="nav-list">
-                <li><a class="nav-link">Link 1</a></li>
-                <li><a class="nav-link">Link 2</a></li>
-                <li><a class="nav-link">Link 3</a></li>
-            </ul>
-        </section>
-        <section class="nav-group">
-            <input id="BBts-sidenav-group" type="checkbox">
-            <a class="nav-link" onClick="document.getElementById('BBts-title').scrollIntoView({behavior: 'smooth'});">BananaBeats</a>
-            <ul class="nav-list">
-                <li><a class="nav-link" onClick="document.getElementById('BBts-spec').scrollIntoView({behavior: 'smooth'});">The Spec</a></li>
-                <li><a class="nav-link" onClick="document.getElementById('BBts-features').scrollIntoView({behavior: 'smooth'});">Project Features</a></li>
-                <li><a class="nav-link" onClick="document.getElementById('BBts-how-it-works').scrollIntoView({behavior: 'smooth'});">How It Works</a></li>
-                <li><a class="nav-link" onClick="document.getElementById('BBts-extras').scrollIntoView({behavior: 'smooth'});">Extras</a></li>
-            </ul>
-        </section>
-        <section class="nav-group">
-            <input id="site-sidenav-group" type="checkbox">
-            <a class="nav-link" onClick="document.getElementById('jump-to').scrollIntoView();">This Website</a>
-            <ul class="nav-list">
-                <li><a class="nav-link">Link 1</a></li>
-                <li><a class="nav-link">Link 2</a></li>
-                <li><a class="nav-link">Link 3</a></li>
-            </ul>
-        </section>
-    </section>
-</nav>
