@@ -7,7 +7,6 @@ import { ClarityModule } from 'clarity-angular';
 import { AppComponent } from './app.component';
 import { ROUTING } from "./app.routing";
 import { HomeComponent } from "./home/home.component";
-import { AboutComponent } from "./about/about.component";
 import { ProjectsComponent } from './projects/projects.component';
 import { RowingComponent } from './rowing/rowing.component';
 import { GeekyComponent } from './geeky/geeky.component';
@@ -15,7 +14,6 @@ import { GeekyComponent } from './geeky/geeky.component';
 @NgModule({
     declarations: [
         AppComponent,
-        AboutComponent,
         HomeComponent,
         ProjectsComponent,
         RowingComponent,
