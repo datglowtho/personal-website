@@ -12,7 +12,7 @@ import {Router} from '@angular/router';
 })
 
 export class ProjectsComponent {
-  showSidenav: boolean;
+  useMobileStyle: boolean;
 
   constructor(private router: Router) {
       router.events.subscribe(s => {
@@ -25,11 +25,11 @@ export class ProjectsComponent {
               }
           }
       });
-      this.showSidenav = (window.innerWidth >= 768);
+      this.useMobileStyle = (window.innerWidth < 768);
   }
 
   onResize(event) {
-    this.showSidenav = (event.target.innerWidth >= 768);
+    this.useMobileStyle = (event.target.innerWidth < 768);
   }
 
 }

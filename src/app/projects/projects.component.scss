@@ -1,10 +1,10 @@
 .sidenav {
     overflow: hidden;
-    max-width: 18%;
+    width: 216px;
 }
 
 .content-area {
-    width: 82%;
+    width: 100%;
     height: -webkit-calc(100vh - 60px);
     height:    -moz-calc(100vh - 60px);
     height:         calc(100vh - 60px);
@@ -21,6 +21,13 @@
     font-weight: 500;
 }
 
+.sidenav .nav-group .nav-list {
+    padding: 0;
+}
+
 .sidenav .sidenav-content>.nav-group>.nav-link:hover {
     background: #eee;
+}
+.row {
+    width: 100%;
 }

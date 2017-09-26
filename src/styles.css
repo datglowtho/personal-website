@@ -62,3 +62,20 @@ ol.carousel-indicators li.active {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
+
+ul{
+    line-height: 21px;
+    margin-left: 24px;
+}
+ul.outer {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+figure {
+    margin: 24px -12px 12px 0;
+}
+figcaption {
+    margin-top: 3px;
+    line-height: 19px;
+    text-align: center;
+}
