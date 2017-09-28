@@ -1,9 +1,9 @@
 <div class="content-container" >
     <div class="content-area">
-        <h2 id="ARi-title">ARi</h2>
         <div class="row">
             <div class="flexthis">
                 <div class="col-xs-12 col-md-8">
+                    <h2 id="ARi-title">ARi</h2>
                     <p class="p2" id="ARi-spec">The Spec</p>
                     <p class="concise">ARi was made as part of the WebApps project in the summer
                     term of the second year Computing course at Imperial. The app could be desktop
@@ -49,6 +49,10 @@
                     themselves not using excellent learning resources such as Piazza's Q&A and Panopto's lecture
                     recordings to their full potential because they aren't integrated with each other. Each of them is another tab
                     on their computer and another search for the right lecture.</p>
+                    <figure *ngIf="useMobileStyle">
+                        <img src="../../images/ARiLogin.png" alt="ARi Login" style="max-width: 100%">
+                        <figcaption>ARi's login page.</figcaption>
+                    </figure>
                     <p class="p2" id="ARi-solution">Proposed Solution</p>
                     <p class="concise">Our aim for the project was to create a unified system that brings together CATe, Piazza and
                     Panopto into a streamlined system that would help students study and reduce the amount of time it takes lecturers
@@ -72,6 +76,18 @@
                             </ul>
                         </li>
                     </ul>
+                    <figure *ngIf="useMobileStyle">
+                        <img src="../../images/ARiViewerAsk.jpg" alt="ARiViewer 1" style="max-width: 100%">
+                        <figcaption>ARiViewer page for a lecture in the Artificial Intelligence module.</figcaption>
+                    </figure>
+                    <figure *ngIf="useMobileStyle">
+                        <img src="../../images/ARiViewerNotes.jpg" alt="ARiViewer 2" style="max-width: 100%">
+                        <figcaption>The same page with the note-taking tab selected.</figcaption>
+                    </figure>
+                    <figure *ngIf="useMobileStyle">
+                        <img src="../../images/AskARiQuestion.png" alt="AskARi" style="max-width: 100%">
+                        <figcaption>A question being viewed in full on AskARi.</figcaption>
+                    </figure>
                     <p class="concise">These two core features were the main focus of our project.
                     Given that we only had three weeks to work on this project, we couldn't hope to
                     make these two in a whole system that had all of the features CATe has as well.
@@ -87,6 +103,10 @@
                     view as a student, but with the option to add a new lecture to a course that they teach.
                     We chose to make the layout the same so that a lecturer knows exactly what a student
                         will see when they come to access the uploaded materials.</p>
+                    <figure *ngIf="useMobileStyle">
+                        <img src="../../images/ARiHomepage.png" alt="AskARi" style="max-width: 100%">
+                        <figcaption>ARi's concept homepage at the end of the project.</figcaption>
+                    </figure>
                     <p class="p2" id="ARi-how-it-works">How it Works</p>
                     <p class="concise">ARi is developed using Angular on the front-end and Django on
                     the back-end with a PostgreSQL database. We used the Clarity design system to help
@@ -105,6 +125,10 @@
                     to make sure it matched their expectations and ask if they thought any improvements needed making.
                     We also collected quantitative data such as the number of clicks it takes to do things on our site
                     and compared this to doing the same things on the currently used platforms.</p>
+                    <figure *ngIf="useMobileStyle">
+                        <img src="../../images/ARiMockup.png" alt="ARi Mockup" style="max-width: 100%">
+                        <figcaption>Mockup for the ARiViewer page.</figcaption>
+                    </figure>
                     <p class="p2" id="ARi-extras">Extras</p>
                     <p class="concise">I worked on ARi with Sarah Baka, Ruhi Choudhury, Josh Cooper. I was predominantly working on
                         the back-end, and wrote about 80 percent of the Django code. At all times I aimed for the back-end code to
@@ -115,7 +139,30 @@
                     to continue work on ARi for the third year group project.
                 </div>
                 <div class="col-xs-12 col-md-4">
-                    IMAGES COMING SOON
+                    <figure *ngIf="!useMobileStyle">
+                        <img src="../../images/ARiLogin.png" alt="ARi Login" style="max-width: 100%">
+                        <figcaption>ARi's login page.</figcaption>
+                    </figure>
+                    <figure *ngIf="!useMobileStyle">
+                        <img src="../../images/ARiViewerAsk.jpg" alt="ARiViewer 1" style="max-width: 100%">
+                        <figcaption>ARiViewer page for a lecture in the Artificial Intelligence module.</figcaption>
+                    </figure>
+                    <figure *ngIf="!useMobileStyle">
+                        <img src="../../images/ARiViewerNotes.jpg" alt="ARiViewer 2" style="max-width: 100%">
+                        <figcaption>The same page with the note-taking tab selected.</figcaption>
+                    </figure>
+                    <figure *ngIf="!useMobileStyle">
+                        <img src="../../images/AskARiQuestion.png" alt="AskARi" style="max-width: 100%">
+                        <figcaption>A question being viewed in full on AskARi.</figcaption>
+                    </figure>
+                    <figure *ngIf="!useMobileStyle">
+                        <img src="../../images/ARiHomepage.png" alt="Homepage" style="max-width: 100%">
+                        <figcaption>ARi's concept homepage at the end of the project.</figcaption>
+                    </figure>
+                    <figure *ngIf="!useMobileStyle">
+                        <img src="../../images/ARiMockup.png" alt="ARi Mockup" style="max-width: 100%">
+                        <figcaption>Mockup for the ARiViewer page.</figcaption>
+                    </figure>
                 </div>
             </div>
         </div>
@@ -142,9 +189,8 @@
                     the latter being a soundboard of Super Mario sound effects
                         that we decided to put in for fun.</p>
                     <figure *ngIf="useMobileStyle">
-                        <img src="../../images/DrumKitStandard.png" alt="Drum kit - no keys played" style="max-width: 100%">
-                        <figcaption>In this image drums are the selected instrument and no bananas are
-                            currently being touched.</figcaption>
+                        <img src="../../images/BBtsInAction.jpg" alt="Piano C Major" style="max-width: 100%">
+                        <figcaption>Demonstrating BananaBeats at an Imperial Open Day.</figcaption>
                     </figure>
                     <p class="p2" id="BBts-how-it-works">How it Works</p>
                     <p class="concise">On the hardware side, to make the keyboard we used a Capacitive Touch HAT add-on from
@@ -161,9 +207,9 @@
                     use the C/Python interface to allow the Python code to call
                         our C functions for lighting up the icons on the GUI.</p>
                     <figure *ngIf="useMobileStyle">
-                        <img src="../../images/PianoCMajor.png" alt="Piano C Major" style="max-width: 100%">
-                        <figcaption>Multiple keys can be pressed at the same time. In this image a C Major
-                            chord is being played on the piano.</figcaption>
+                        <img src="../../images/DrumKitStandard.png" alt="Drum kit - no keys played" style="max-width: 100%">
+                        <figcaption>In this image drums are the selected instrument and no bananas are
+                            currently being touched.</figcaption>
                     </figure>
                     <p class="p2" id="BBts-extras">Extras</p>
                         <p class="concise">I worked on BananaBeats with Shayan Khaksar,
@@ -173,8 +219,17 @@
                             date we have presented BananaBeats at 8 Imperial events.</p>
                     <p class="concise">The code for the extension part of the project is on
                     <a href="https://github.com/harry-uglow/BananaBeats">Github</a>.</p>
+                    <figure *ngIf="useMobileStyle">
+                        <img src="../../images/PianoCMajor.png" alt="Piano C Major" style="max-width: 100%">
+                        <figcaption>Multiple keys can be pressed at the same time. In this image a C Major
+                            chord is being played on the piano.</figcaption>
+                    </figure>
                 </div>
                 <div class="col-xs-12 col-md-4">
+                    <figure *ngIf="!useMobileStyle">
+                        <img src="../../images/BBtsInAction.jpg" alt="Piano C Major" style="max-width: 100%">
+                        <figcaption>Demonstrating BananaBeats at an Imperial Open Day.</figcaption>
+                    </figure>
                     <figure *ngIf="!useMobileStyle">
                         <img src="../../images/DrumKitStandard.png" alt="Drum kit - no keys played" style="max-width: 100%">
                         <figcaption>In this image drums are the selected instrument and no bananas are
