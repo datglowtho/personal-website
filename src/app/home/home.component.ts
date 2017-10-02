@@ -14,12 +14,15 @@ import {Component} from "@angular/core";
 })
 export class HomeComponent {
     useMobileStyle: boolean;
+    vSmallScreen: boolean;
 
     constructor() {
         this.useMobileStyle = (window.innerWidth < 768);
+        this.vSmallScreen = (window.innerWidth < 460);
     }
 
     onResize(event) {
         this.useMobileStyle = (event.target.innerWidth < 768);
+        this.vSmallScreen = (event.target.innerWidth < 460);
     }
 }

@@ -3,8 +3,19 @@
         <div class="row">
             <div class="flexthis">
                 <div class="col-xs-12 col-md-8">
-                    <h2 id="ARi-title">ARi</h2>
-                    <p class="p2" id="ARi-spec">The Spec</p>
+                    <h2 *ngIf="!useMobileStyle;else mobileTitleARi" id="ARi-title">ARi</h2>
+                    <ng-template #mobileTitleARi>
+                        <div class="row" style="margin: 0;">
+                            <div class="col-xs-6">
+                                <h2>ARi</h2>
+                            </div>
+                            <div class="col-xs-6" style="padding-right: 0">
+                                <img src="../../images/ARi_logo.png"
+                                     alt="ARi logo" style="max-height: 72px; float: right;"/>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <p class="p2" id="ARi-spec" [class.mobile-margin]="useMobileStyle">The Spec</p>
                     <p class="concise">ARi was made as part of the WebApps project in the summer
                     term of the second year Computing course at Imperial. The app could be desktop
                     or mobile, had to allow for rich user interactions (e.g. messaging, scoreboards, etc.) and
@@ -169,8 +180,19 @@
         <hr style="margin-top: 24px">
         <div class="row">
                 <div class="col-xs-12 col-md-8">
-                    <h2  id="BBts-title">BananaBeats</h2>
-                    <p class="p2" id="BBts-spec">The Spec</p>
+                    <h2 *ngIf="!useMobileStyle;else mobileTitleBBts" id="BBts-title">BananaBeats</h2>
+                    <ng-template #mobileTitleBBts>
+                        <div class="row" style="margin: 0;">
+                            <div class="col-xs-6">
+                                <h2>BananaBeats</h2>
+                            </div>
+                            <div class="col-xs-6" style="padding-right: 0">
+                                <img src="../../images/BananaBeatsLogo.png"
+                                     alt="Banana Beats Logo" style="max-height: 72px; float: right;"/>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <p class="p2" id="BBts-spec" [class.mobile-margin]="useMobileStyle">The Spec</p>
                     <p class="concise">At the end of the first year of Computing at Imperial there
                     is a C project for groups of 4 to implement an assembler for ARM assembly code
                     and an emulator to simulate the execution of the code on a Raspberry Pi.

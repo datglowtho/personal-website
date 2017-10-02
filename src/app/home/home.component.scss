@@ -36,6 +36,11 @@ p.mobile-margin {
 .col-md-5 .carousel-inner > .item {
     height: 312px;
 }
+.col-md-5 .carousel-inner > .item.xs-screen {
+    max-height: -webkit-calc(2 * 100vw / 3);
+    max-height:    -moz-calc(2 * 100vw / 3);
+    max-height:         calc(2 * 100vw / 3);
+}
 
 .desktop-margin {
     margin-top: 0;
