@@ -1,252 +1,242 @@
 <div class="content-container" >
     <div class="content-area">
         <div class="row">
-            <div class="flexthis">
-                <div class="col-xs-12 col-md-8" id="ARi-title">
-                    <h2>ARi</h2>
-                    <img *ngIf="useMobileStyle" src="../../images/ARi_logo.png"
-                         alt="ARi logo" style="position: absolute; top: 0; right: -12px; max-height: 72px;"/>
-                    <p class="p2" id="ARi-spec">The Spec</p>
-                    <p class="concise">ARi was made as part of the WebApps project in the summer
-                    term of the second year Computing course at Imperial. The app could be desktop
-                    or mobile, had to allow for rich user interactions (e.g. messaging, scoreboards, etc.) and
-                    use a database to maintain some internal state, such as user-specific data. Additionally,
-                    this project is run in conjunction with a Human Centred Design (HCD) course from the Royal College of Art.
-                    This meant we were making an app to solve some problem our potential users currently face, and had
-                    to keep the user in mind at all times when designing and developing it.
-                    </p>
-                    <p class="p2" id="ARi-problem">The Problem</p>
-                    <p class="concise">In the Department of Computing at Imperial, there are lots
-                    of online services through which students can communicate with their lecturers
-                        or access resources such as lecture slides/videos. The main platforms are:</p>
-                    <ul class="outer">
-                        <li><strong>CATe</strong> - Coursework management system with many features including:
-                        <ul>
-                            <li>Access to resources such as lecture slides and coursework specs.</li>
-                            <li>Digital coursework submission.</li>
-                            <li>Online grades viewer.</li>
-                        </ul>
-                        </li>
-                        <li><strong>Piazza</strong>
-                        <ul>
-                            <li>Predominantly a Q&A platform.</li>
-                            <li>Also hosts resources such as lecture slides.</li>
-                        </ul>
-                        </li>
-                        <li><strong>Panopto</strong>
-                        <ul>
-                            <li>Lecturers use the Panopto app to record and upload their lectures.</li>
-                            <li>Students use the website or app to view recordings of past lectures.</li>
-                        </ul>
-                        </li>
-                    </ul>
-                    <p class="concise">All of these services work very well in their own right but
-                    together they lead to frustration for both lecturers and students. A big problem
-                    we focused on is accessing resources such as lecture slides. Some students would go to CATe first to look for
-                    these, some would go to Piazza. Lecturers tend not to upload things to two
-                    separate places and none of us expect them to but this leads to confusion and wasted study time.
-                    There are also a couple of other places lecturers can (and do) host resources so this is something that really
-                        needed a solution.</p>
-                    <p class="concise">The other main problem we targeted is the separation of these services. Students find
-                    themselves not using excellent learning resources such as Piazza's Q&A and Panopto's lecture
-                    recordings to their full potential because they aren't integrated with each other. Each of them is another tab
-                    on their computer and another search for the right lecture.</p>
-                    <figure *ngIf="useMobileStyle">
-                        <img src="../../images/ARiLogin.png" alt="ARi Login" style="max-width: 100%">
-                        <figcaption>ARi's login page.</figcaption>
-                    </figure>
-                    <p class="p2" id="ARi-solution">Proposed Solution</p>
-                    <p class="concise">Our aim for the project was to create a unified system that brings together CATe, Piazza and
-                    Panopto into a streamlined system that would help students study and reduce the amount of time it takes lecturers
-                    to interact with their students. This system is ARi (pronounced 'ahh-ree') and its main features are:
-                    <ul class="outer">
-                        <li><strong>ARiViewer</strong> - A revising student's dream. One page for all four of the following:
-                        <ul>
-                            <li>A recording of a previous lecture.</li>
-                            <li>That lecture's slides.</li>
-                            <li>Note taking - saved online for whenever you next return to this lecture.</li>
-                            <li>Asking a question about this lecture and quick links to relevant questions.</li>
-                            <li>All of these can be hidden or re-sized so students can adjust the page to best suit them.</li>
-                        </ul>
-                        </li>
-                        <li><strong>AskARi</strong> - Our hierarchical rebuild of Piazza.
-                            <ul>
-                                <li>Piazza questions are only attached to a module and can only be sorted chronologically.</li>
-                                <li>AskARi questions not only have a module but also an associated lecture.</li>
-                                <li>AskARi questions can be shown for a specific lecture, a whole module or even all modules.</li>
-                                <li>Students can upvote questions and ARi uses scores and recent interactions to better rank questions.</li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <figure *ngIf="useMobileStyle">
-                        <img src="../../images/ARiViewerAsk.jpg" alt="ARiViewer 1" style="max-width: 100%">
-                        <figcaption>ARiViewer page for a lecture in the Artificial Intelligence module.</figcaption>
-                    </figure>
-                    <figure *ngIf="useMobileStyle">
-                        <img src="../../images/ARiViewerNotes.jpg" alt="ARiViewer 2" style="max-width: 100%">
-                        <figcaption>The same page with the note-taking tab selected.</figcaption>
-                    </figure>
-                    <figure *ngIf="useMobileStyle">
-                        <img src="../../images/AskARiQuestion.png" alt="AskARi" style="max-width: 100%">
-                        <figcaption>A question being viewed in full on AskARi.</figcaption>
-                    </figure>
-                    <p class="concise">These two core features were the main focus of our project.
-                    Given that we only had three weeks to work on this project, we couldn't hope to
-                    make these two in a whole system that had all of the features CATe has as well.
-                    However, we really wanted to show our vision for ARi and what a better version
-                    of the Department of Computing online experience could look like. So we presented
-                    these main two fully functional parts of our app in a proof of concept for the
-                    rest of ARi. This featured a home page with some hard-coded information such as
-                    timetable for the week ahead and upcoming coursework deadlines alongside
-                    real data such as recent questions in AskARi and recently uploaded lectures.
-                    It also has an easy-to-navigate layout, with AskARi and our courses page only a
-                    click away. The courses page has all the lectures available to that student,
-                    organised in a stack view by module. When a lecturer uses ARi, they have the same
-                    view as a student, but with the option to add a new lecture to a course that they teach.
-                    We chose to make the layout the same so that a lecturer knows exactly what a student
-                        will see when they come to access the uploaded materials.</p>
-                    <figure *ngIf="useMobileStyle">
-                        <img src="../../images/ARiHomepage.png" alt="AskARi" style="max-width: 100%">
-                        <figcaption>ARi's concept homepage at the end of the project.</figcaption>
-                    </figure>
-                    <p class="p2" id="ARi-how-it-works">How it Works</p>
-                    <p class="concise">ARi is developed using Angular on the front-end and Django on
-                    the back-end with a PostgreSQL database. We used the Clarity design system to help
-                    make our interface as clean and easy-to-use as possible. Any student from the Department
-                    of Computing can log in to ARi as we connect to the college's LDAP directory to
-                    authenticate users. We also check what LDAP groups a user is part of to determine if they
-                    are a lecturer or a student and what modules they take or teach. We use this information
-                    to only show modules relevant to that user. When a lecturer creates a new lecture on ARi they
-                    upload a pdf file for the slides and give us a URL to the Panopto recording of it. We chose
-                    to keep Panopto for the recording of lectures as of course we did not have time to create a
-                    video recording feature that works as well as Panopto's. Then when a student uses the ARiViewer
-                        we fetch the video from Panopto and embed it on the page.</p>
-                    <p class="concise">On the HCD side of things, we made sure to involve ARi's stakeholders as much as
-                    possible. Before implementing anything, we created mock-ups for the whole site and gathered
-                    feedback on the design. We then asked the same people for feedback again once each feature was finished
-                    to make sure it matched their expectations and ask if they thought any improvements needed making.
-                    We also collected quantitative data such as the number of clicks it takes to do things on our site
-                    and compared this to doing the same things on the currently used platforms.</p>
-                    <figure *ngIf="useMobileStyle">
-                        <img src="../../images/ARiMockup.png" alt="ARi Mockup" style="max-width: 100%">
-                        <figcaption>Mockup for the ARiViewer page.</figcaption>
-                    </figure>
-                    <p class="p2" id="ARi-extras">Extras</p>
-                    <p class="concise">I worked on ARi with Sarah Baka, Ruhi Choudhury, Josh Cooper. I was predominantly working on
-                        the back-end, and wrote about 80 percent of the Django code. At all times I aimed for the back-end code to
-                        be as clean and well-designed as possible so that in the future new features could be added with ease. I'm really proud
-                        with the end result but am unfortunately unable to share it on my public GitHub at this time.
-                    <p class="concise">ARi received very high marks and we have been invited to present it at upcoming interview days.
-                    Professor Susan Eisenbach expressed interest in seeing ARi developed further and offered to be our supervisor if we wished
-                    to continue work on ARi for the third year group project.
-                </div>
-                <div class="col-xs-12 col-md-4">
-                    <figure *ngIf="!useMobileStyle">
-                        <img src="../../images/ARiLogin.png" alt="ARi Login" style="max-width: 100%">
-                        <figcaption>ARi's login page.</figcaption>
-                    </figure>
-                    <figure *ngIf="!useMobileStyle">
-                        <img src="../../images/ARiViewerAsk.jpg" alt="ARiViewer 1" style="max-width: 100%">
-                        <figcaption>ARiViewer page for a lecture in the Artificial Intelligence module.</figcaption>
-                    </figure>
-                    <figure *ngIf="!useMobileStyle">
-                        <img src="../../images/ARiViewerNotes.jpg" alt="ARiViewer 2" style="max-width: 100%">
-                        <figcaption>The same page with the note-taking tab selected.</figcaption>
-                    </figure>
-                    <figure *ngIf="!useMobileStyle">
-                        <img src="../../images/AskARiQuestion.png" alt="AskARi" style="max-width: 100%">
-                        <figcaption>A question being viewed in full on AskARi.</figcaption>
-                    </figure>
-                    <figure *ngIf="!useMobileStyle">
-                        <img src="../../images/ARiHomepage.png" alt="Homepage" style="max-width: 100%">
-                        <figcaption>ARi's concept homepage at the end of the project.</figcaption>
-                    </figure>
-                    <figure *ngIf="!useMobileStyle">
-                        <img src="../../images/ARiMockup.png" alt="ARi Mockup" style="max-width: 100%">
-                        <figcaption>Mockup for the ARiViewer page.</figcaption>
-                    </figure>
-                </div>
+            <div class="col-xs-12 col-md-8" id="Microscope-title">
+                <h2>Automated Detection of Intestinal Stem Cells</h2>
+                <p class="p2" id="Microscope-spec">Overview</p>
+                <p class="concise">Cancer Research UK is investigating the effects of interventions
+                    on stem cell dynamics in the intestine. As part of their research, they acquire
+                    images of Paneth cells labelled with green fluorescent UEA-1, as well as tdTom-positive
+                    intestinal stem cells, and extract information about them at points of overlap (Figure 1).
+                    Currently, researchers have to manually operate confocal microscopes to find the points of
+                    interest in a sample and take images of them. This is feasible at the initial
+                    stage when they only have tens of tdTom-positive intestinal stem cells, but as
+                    the number of these cells proliferate with time, researchers have to manually
+                    check hundreds – a time-consuming and impractical process.
+                </p>
+                <figure *ngIf="useMobileStyle">
+                    <img src="../../images/ARiLogin.png" alt="ARi Login">
+                    <figcaption>ARi's login page.</figcaption>
+                </figure>
+                <p class="concise">Our task is to design and implement a system that will automate a microscope scan,
+                    returning relevant high-quality images to researchers. Ideally our system will also analyse the
+                    images and take some basic measurements to further speed up the process of detecting
+                    tdTom-positive intestinal stem cells in crypts with labelled Paneth cells.</p>
+                <p class="p2" id = "Microscope-progress">Progress</p>
+                <p class="concise">I am very excited to be working on this project with Sarah Baka, Yianni Gabrielides,
+                    Andy Hume and Zubair Chowdhury. This is kindly being sponsored by Cancer Research UK and has
+                    received funding from the Department of Computing at Imperial. The project was started just
+                    last week and will continue until January 2018. Expect updates at least once a fortnight.</p>
+                <p class="concise">Currently we are laying down the plans for this project. We expect to write
+                    the vast majority of the code in Python and will be using the Kanban agile development
+                    methodology to help keep us as productive as productive as possible.</p>
+            </div>
+            <div class="col-xs-12 col-md-4">
+                <figure *ngIf="!useMobileStyle">
+                    <img src="../../images/ARiLogin.png" alt="ARi Login">
+                    <figcaption>ARi's login page.</figcaption>
+                </figure>
             </div>
         </div>
-        <hr style="margin-top: 24px">
+        <hr>
         <div class="row">
-                <div class="col-xs-12 col-md-8" id="BBts-title">
-                    <h2>BananaBeats</h2>
-                    <img *ngIf="useMobileStyle" src="../../images/BananaBeatsLogo.png"
-                         alt="Banana Beats Logo" style="position: absolute; top: 0; right: -12px; max-height: 72px;"/>
-                    <p class="p2" id="BBts-spec">The Spec</p>
-                    <p class="concise">At the end of the first year of Computing at Imperial there
-                    is a C project for groups of 4 to implement an assembler for ARM assembly code
-                    and an emulator to simulate the execution of the code on a Raspberry Pi.
-                    The extension part of the project is to design, implement and document
-                    an extension of our choice to do with the Raspberry Pi. It could
-                    be written in either C (and run within the Raspbian OS), or bare-metal assembly.
-                    We opted for the former.</p>
-                    <p class="p2" id="BBts-features">Project Features</p>
-                    <p class="concise">Our group's idea was to make a basic touch-sensitive keyboard
-                    for the Raspberry Pi with a GUI written in C to accompany it.
-                    The keyboard uses 12 bananas instead of conventional keys,
-                    hence the name "BananaBeats". The GUI features radio buttons
-                    to change instrument, a volume slider and 12 icons which light
-                    up when the corresponding banana is being touched. This can be seen
-                    in Fig. 3. The instruments are "Drums", "Piano" and "Mario",
-                    the latter being a soundboard of Super Mario sound effects
-                        that we decided to put in for fun.</p>
-                    <figure *ngIf="useMobileStyle">
-                        <img src="../../images/BBtsInAction.jpg" alt="Piano C Major" style="max-width: 100%">
-                        <figcaption>Demonstrating BananaBeats at an Imperial Open Day.</figcaption>
-                    </figure>
-                    <p class="p2" id="BBts-how-it-works">How it Works</p>
-                    <p class="concise">On the hardware side, to make the keyboard we used a Capacitive Touch HAT add-on from
-                    Adafruit. This has 12 capacitive touch pins, meaning when something
-                    that conducts electricity touches a pin (like a finger), a charge is transferred to it.
-                    This creates a voltage drop allowing the Pi to know a pin has been
-                    touched. Bananas work as keys because they conduct electricity due
-                    to their high water content, and they are connected to the pins by
-                        pushing wires into the bananas and connecting the wires to the pins.</p><p class="concise">
-                    As for the software, we wrote the GUI in C using GTK+. The software
-                    for connecting to the touch HAT, however, was easiest written in
-                    Python. Therefore we run the GUI in one thread and run a Python
-                    script to detect key presses and play sounds in another. We
-                    use the C/Python interface to allow the Python code to call
-                        our C functions for lighting up the icons on the GUI.</p>
-                    <figure *ngIf="useMobileStyle">
-                        <img src="../../images/DrumKitStandard.png" alt="Drum kit - no keys played" style="max-width: 100%">
-                        <figcaption>In this image drums are the selected instrument and no bananas are
-                            currently being touched.</figcaption>
-                    </figure>
-                    <p class="p2" id="BBts-extras">Extras</p>
-                        <p class="concise">I worked on BananaBeats with Shayan Khaksar,
-                    Maurice Yap and Josh Cooper. We won 3rd place out of around 40 groups doing
-                    this project that year. Following this, we were invited to
-                    demo the project at Imperial Open Days and interview days. To
-                            date we have presented BananaBeats at 8 Imperial events.</p>
-                    <p class="concise">The code for the extension part of the project is on
-                    <a href="https://github.com/harry-uglow/BananaBeats">Github</a>.</p>
-                    <figure *ngIf="useMobileStyle">
-                        <img src="../../images/PianoCMajor.png" alt="Piano C Major" style="max-width: 100%">
-                        <figcaption>Multiple keys can be pressed at the same time. In this image a C Major
-                            chord is being played on the piano.</figcaption>
-                    </figure>
-                </div>
-                <div class="col-xs-12 col-md-4">
-                    <figure *ngIf="!useMobileStyle">
-                        <img src="../../images/BBtsInAction.jpg" alt="Piano C Major" style="max-width: 100%">
-                        <figcaption>Demonstrating BananaBeats at an Imperial Open Day.</figcaption>
-                    </figure>
-                    <figure *ngIf="!useMobileStyle">
-                        <img src="../../images/DrumKitStandard.png" alt="Drum kit - no keys played" style="max-width: 100%">
-                        <figcaption>In this image drums are the selected instrument and no bananas are
-                            currently being touched.</figcaption>
-                    </figure>
-                    <figure *ngIf="!useMobileStyle">
-                        <img src="../../images/PianoCMajor.png" alt="Piano C Major" style="max-width: 100%">
-                        <figcaption>Multiple keys can be pressed at the same time. In this image a C Major
-                            chord is being played on the piano.</figcaption>
-                    </figure>
-                </div>
+            <div class="col-xs-12 col-md-8" id="ARi-title">
+                <h2>ARi</h2>
+                <img *ngIf="useMobileStyle" src="../../images/ARi_logo.png"
+                     alt="ARi logo" class="mobile-logo"/>
+                <p class="p2" id="ARi-spec">The Spec</p>
+                <p class="concise">ARi was made as part of the WebApps project in the summerterm of the second year Computing course at Imperial. The app could be desktopor mobile, had to allow for rich user interactions (e.g. messaging, scoreboards, etc.) anduse a database to maintain some internal state, such as user-specific data. Additionally,this project is run in conjunction with a Human Centred Design (HCD) course from the Royal College of Art.This meant we were making an app to solve some problem our potential users currently face, and hadto keep the user in mind at all times when designing and developing it.
+                </p>
+                <p class="p2" id="ARi-problem">The Problem</p>
+                <p class="concise">In the Department of Computing at Imperial, there are lotsof online services through which students can communicate with their lecturers
+                    or access resources such as lecture slides/videos. The main platforms are:</p>
+                <ul class="outer">
+                    <li><strong>CATe</strong> - Coursework management system with many features including:<ul>
+                        <li>Access to resources such as lecture slides and coursework specs.</li>
+                        <li>Digital coursework submission.</li>
+                        <li>Online grades viewer.</li>
+                    </ul>
+                    </li>
+                    <li><strong>Piazza</strong><ul>
+                        <li>Predominantly a Q&A platform.</li>
+                        <li>Also hosts resources such as lecture slides.</li>
+                    </ul>
+                    </li>
+                    <li><strong>Panopto</strong><ul>
+                        <li>Lecturers use the Panopto app to record and upload their lectures.</li>
+                        <li>Students use the website or app to view recordings of past lectures.</li>
+                    </ul>
+                    </li>
+                </ul>
+                <p class="concise">All of these services work very well in their own right buttogether they lead to frustration for both lecturers and students. A big problemwe focused on is accessing resources such as lecture slides. Some students would go to CATe first to look forthese, some would go to Piazza. Lecturers tend not to upload things to twoseparate places and none of us expect them to but this leads to confusion and wasted study time.There are also a couple of other places lecturers can (and do) host resources so this is something that really
+                    needed a solution.</p>
+                <p class="concise">The other main problem we targeted is the separation of these services. Students findthemselves not using excellent learning resources such as Piazza's Q&A and Panopto's lecturerecordings to their full potential because they aren't integrated with each other. Each of them is another tabon their computer and another search for the right lecture.</p>
+                <figure *ngIf="useMobileStyle">
+                    <img src="../../images/ARiLogin.png" alt="ARi Login">
+                    <figcaption>ARi's login page.</figcaption>
+                </figure>
+                <p class="p2" id="ARi-solution">Proposed Solution</p>
+                <p class="concise">Our aim for the project was to create a unified system that brings together CATe, Piazza andPanopto into a streamlined system that would help students study and reduce the amount of time it takes lecturersto interact with their students. This system is ARi (pronounced 'ahh-ree') and its main features are:
+                <ul class="outer">
+                <li><strong>ARiViewer</strong> - A revising student's dream. One page for all four of the following:
+                    <ul>
+                        <li>A recording of a previous lecture.</li>
+                        <li>That lecture's slides.</li>
+                        <li>Note taking - saved online for whenever you next return to this lecture.</li>
+                        <li>Asking a question about this lecture and quick links to relevant questions.</li>
+                        <li>All of these can be hidden or re-sized so students can adjust the page to best suit them.</li>
+                    </ul>
+                </li>
+                <li><strong>AskARi</strong> - Our hierarchical rebuild of Piazza.
+                    <ul>
+                        <li>Piazza questions are only attached to a module and can only be sorted chronologically.</li>
+                        <li>AskARi questions not only have a module but also an associated lecture.</li>
+                        <li>AskARi questions can be shown for a specific lecture, a whole module or even all modules.</li>
+                        <li>Students can upvote questions and ARi uses scores and recent interactions to better rank questions.</li>
+                    </ul>
+                </li>
+            </ul>
+                <figure *ngIf="useMobileStyle">
+                    <img src="../../images/ARiViewerAsk.jpg" alt="ARiViewer 1">
+                    <figcaption>ARiViewer page for a lecture in the Artificial Intelligence module.</figcaption>
+                </figure>
+                <figure *ngIf="useMobileStyle">
+                    <img src="../../images/ARiViewerNotes.jpg" alt="ARiViewer 2">
+                    <figcaption>The same page with the note-taking tab selected.</figcaption>
+                </figure>
+                <figure *ngIf="useMobileStyle">
+                    <img src="../../images/AskARiQuestion.png" alt="AskARi">
+                    <figcaption>A question being viewed in full on AskARi.</figcaption>
+                </figure>
+                <p class="concise">These two core features were the main focus of our project.Given that we only had three weeks to work on this project, we couldn't hope tomake these two in a whole system that had all of the features CATe has as well.However, we really wanted to show our vision for ARi and what a better versionof the Department of Computing online experience could look like. So we presentedthese main two fully functional parts of our app in a proof of concept for therest of ARi. This featured a home page with some hard-coded information such astimetable for the week ahead and upcoming coursework deadlines alongsidereal data such as recent questions in AskARi and recently uploaded lectures.It also has an easy-to-navigate layout, with AskARi and our courses page only aclick away. The courses page has all the lectures available to that student,organised in a stack view by module. When a lecturer uses ARi, they have the sameview as a student, but with the option to add a new lecture to a course that they teach.We chose to make the layout the same so that a lecturer knows exactly what a student
+                    will see when they come to access the uploaded materials.</p>
+                <figure *ngIf="useMobileStyle">
+                    <img src="../../images/ARiHomepage.png" alt="AskARi">
+                    <figcaption>ARi's concept homepage at the end of the project.</figcaption>
+                </figure>
+                <p class="p2" id="ARi-how-it-works">How it Works</p>
+                <p class="concise">ARi is developed using Angular on the front-end and Django onthe back-end with a PostgreSQL database. We used the Clarity design system to helpmake our interface as clean and easy-to-use as possible. Any student from the Departmentof Computing can log in to ARi as we connect to the college's LDAP directory toauthenticate users. We also check what LDAP groups a user is part of to determine if theyare a lecturer or a student and what modules they take or teach. We use this informationto only show modules relevant to that user. When a lecturer creates a new lecture on ARi theyupload a pdf file for the slides and give us a URL to the Panopto recording of it. We choseto keep Panopto for the recording of lectures as of course we did not have time to create avideo recording feature that works as well as Panopto's. Then when a student uses the ARiViewer
+                    we fetch the video from Panopto and embed it on the page.</p>
+                <p class="concise">On the HCD side of things, we made sure to involve ARi's stakeholders as much aspossible. Before implementing anything, we created mock-ups for the whole site and gatheredfeedback on the design. We then asked the same people for feedback again once each feature was finishedto make sure it matched their expectations and ask if they thought any improvements needed making.We also collected quantitative data such as the number of clicks it takes to do things on our siteand compared this to doing the same things on the currently used platforms.</p>
+                <figure *ngIf="useMobileStyle">
+                    <img src="../../images/ARiMockup.png" alt="ARi Mockup">
+                    <figcaption>Mockup for the ARiViewer page.</figcaption>
+                </figure>
+                <p class="p2" id="ARi-extras">Extras</p>
+                <p class="concise">I worked on ARi with Sarah Baka, Ruhi Choudhury, Josh Cooper. I was predominantly working on
+                    the back-end, and wrote about 80 percent of the Django code. At all times I aimed for the back-end code to
+                    be as clean and well-designed as possible so that in the future new features could be added with ease. I'm really proud
+                    with the end result but am unfortunately unable to share it on my public GitHub at this time.
+                <p class="concise">ARi received very high marks and we have been invited to present it at upcoming interview days.
+                Professor Susan Eisenbach expressed interest in seeing ARi developed further and offered to be our supervisor if we wished
+                to continue work on ARi for the third year group project.
+            </div>
+            <div class="col-xs-12 col-md-4">
+                <ul class="image-column">
+                    <li><span>
+                        <figure *ngIf="!useMobileStyle">
+                            <img src="../../images/ARiLogin.png" alt="ARi Login">
+                            <figcaption>ARi's login page.</figcaption>
+                        </figure>
+                    </span></li>
+                    <li><span>
+                        <figure *ngIf="!useMobileStyle">
+                            <img src="../../images/ARiViewerAsk.jpg" alt="ARiViewer 1">
+                            <figcaption>ARiViewer page for a lecture in the Artificial Intelligence module.</figcaption>
+                        </figure>
+                    </span></li>
+                    <li><span>
+                        <figure *ngIf="!useMobileStyle">
+                            <img src="../../images/ARiViewerNotes.jpg" alt="ARiViewer 2">
+                            <figcaption>The same page with the note-taking tab selected.</figcaption>
+                        </figure>
+                    </span></li>
+                    <li><span>
+                        <figure *ngIf="!useMobileStyle">
+                            <img src="../../images/AskARiQuestion.png" alt="AskARi">
+                            <figcaption>A question being viewed in full on AskARi.</figcaption>
+                        </figure>
+                    </span></li>
+                    <li><span>
+                        <figure *ngIf="!useMobileStyle">
+                            <img src="../../images/ARiHomepage.png" alt="Homepage">
+                            <figcaption>ARi's concept homepage at the end of the project.</figcaption>
+                        </figure>
+                    </span></li>
+                    <li><span>
+                        <figure *ngIf="!useMobileStyle">
+                            <img src="../../images/ARiMockup.png" alt="ARi Mockup">
+                            <figcaption>Mockup for the ARiViewer page.</figcaption>
+                        </figure>
+                    </span></li>
+                </ul>
+            </div>
         </div>
-        <hr style="margin-top: 24px">
+        <hr>
+        <div class="row">
+            <div class="col-xs-12 col-md-8" id="BBts-title">
+                <h2>BananaBeats</h2>
+                <img *ngIf="useMobileStyle" src="../../images/BananaBeatsLogo.png"
+                     alt="Banana Beats Logo" class="mobile-logo"/>
+                <p class="p2" id="BBts-spec">The Spec</p>
+                <p class="concise">At the end of the first year of Computing at Imperial thereis a C project for groups of 4 to implement an assembler for ARM assembly codeand an emulator to simulate the execution of the code on a Raspberry Pi.The extension part of the project is to design, implement and documentan extension of our choice to do with the Raspberry Pi. It couldbe written in either C (and run within the Raspbian OS), or bare-metal assembly.We opted for the former.</p>
+                <p class="p2" id="BBts-features">Project Features</p>
+                <p class="concise">Our group's idea was to make a basic touch-sensitive keyboardfor the Raspberry Pi with a GUI written in C to accompany it.The keyboard uses 12 bananas instead of conventional keys,hence the name "BananaBeats". The GUI features radio buttonsto change instrument, a volume slider and 12 icons which lightup when the corresponding banana is being touched. This can be seenin Fig. 3. The instruments are "Drums", "Piano" and "Mario",the latter being a soundboard of Super Mario sound effects
+                    that we decided to put in for fun.</p>
+                <figure *ngIf="useMobileStyle">
+                    <img src="../../images/BBtsInAction.jpg" alt="Piano C Major">
+                    <figcaption>Demonstrating BananaBeats at an Imperial Open Day.</figcaption>
+                </figure>
+                <p class="p2" id="BBts-how-it-works">How it Works</p>
+                <p class="concise">On the hardware side, to make the keyboard we used a Capacitive Touch HAT add-on fromAdafruit. This has 12 capacitive touch pins, meaning when somethingthat conducts electricity touches a pin (like a finger), a charge is transferred to it.This creates a voltage drop allowing the Pi to know a pin has beentouched. Bananas work as keys because they conduct electricity dueto their high water content, and they are connected to the pins by
+                    pushing wires into the bananas and connecting the wires to the pins.</p><p class="concise">
+                As for the software, we wrote the GUI in C using GTK+. The software
+                for connecting to the touch HAT, however, was easiest written in
+                Python. Therefore we run the GUI in one thread and run a Python
+                script to detect key presses and play sounds in another. We
+                use the C/Python interface to allow the Python code to call
+                our C functions for lighting up the icons on the GUI.</p>
+                <figure *ngIf="useMobileStyle">
+                    <img src="../../images/DrumKitStandard.png" alt="Drum kit - no keys played">
+                    <figcaption>In this image drums are the selected instrument and no bananas are
+                        currently being touched.</figcaption>
+                </figure>
+                <p class="p2" id="BBts-extras">Extras</p>
+                <p class="concise">I worked on BananaBeats with Shayan Khaksar,Maurice Yap and Josh Cooper. We won 3rd place out of around 40 groups doingthis project that year. Following this, we were invited todemo the project at Imperial Open Days and interview days. To
+                    date we have presented BananaBeats at 8 Imperial events.</p>
+                <p class="concise">The code for the extension part of the project is on<a href="https://github.com/harry-uglow/BananaBeats">Github</a>.</p>
+                <figure *ngIf="useMobileStyle">
+                    <img src="../../images/PianoCMajor.png" alt="Piano C Major">
+                    <figcaption>Multiple keys can be pressed at the same time. In this image a C Major
+                        chord is being played on the piano.</figcaption>
+                </figure>
+            </div>
+            <div class="col-xs-12 col-md-4">
+                <ul class="image-column">
+                    <li><span>
+                        <figure *ngIf="!useMobileStyle">
+                            <img src="../../images/BBtsInAction.jpg" alt="Piano C Major">
+                            <figcaption>Demonstrating BananaBeats at an Imperial Open Day.</figcaption>
+                        </figure>
+                    </span></li>
+                    <li><span>
+                        <figure *ngIf="!useMobileStyle">
+                            <img src="../../images/DrumKitStandard.png" alt="Drum kit - no keys played">
+                            <figcaption>In this image drums are the selected instrument and no bananas are
+                                currently being touched.</figcaption>
+                        </figure>
+                    </span></li>
+                    <li><span>
+                        <figure *ngIf="!useMobileStyle">
+                            <img src="../../images/PianoCMajor.png" alt="Piano C Major">
+                            <figcaption>Multiple keys can be pressed at the same time. In this image a C Major
+                                chord is being played on the piano.</figcaption>
+                        </figure>
+                    </span></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
         <h2 id="Site-title">This Website</h2>
         <div class="row">
             <div class="flexthis">
@@ -254,6 +244,7 @@
                     <p class="concise">I developed this site in July 2017 and plan to continue updating it throughout my studies at Imperial and beyond.
                     It is front-end only, using Angular and Clarity once again after getting to grips with them during work on ARi.
                     I hope you enjoy reading it and if you'd like to see the code for it, you can find it <a href="https://github.com/harry-uglow/personal-website">here</a> on my Github.</p>
+                    <p class="concise">If you have any suggestions or find any issues with the site please don't hestitate to <a href="mailto:harrison.uglow15@imperial.ac.uk">contact</a> me.</p>
                 </div>
                 <div class="col-xs-12 col-md-4">
 
