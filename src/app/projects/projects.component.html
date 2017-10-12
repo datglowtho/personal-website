@@ -15,13 +15,18 @@
                     check hundreds – a time-consuming and impractical process.
                 </p>
                 <figure *ngIf="useMobileStyle">
-                    <img src="../../images/ARiLogin.png" alt="ARi Login">
-                    <figcaption>ARi's login page.</figcaption>
+                    <img src="../../images/redandgreenclones.png" alt="Red, Green, Merge">
+                    <figcaption>The size of the red stem cells is determined in the plane
+                        where the green Paneth cells are brightest.</figcaption>
                 </figure>
                 <p class="concise">Our task is to design and implement a system that will automate a microscope scan,
                     returning relevant high-quality images to researchers. Ideally our system will also analyse the
                     images and take some basic measurements to further speed up the process of detecting
                     tdTom-positive intestinal stem cells in crypts with labelled Paneth cells.</p>
+                <figure *ngIf="useMobileStyle">
+                    <img src="../../images/CellsPopulateCrypt.png" alt="Cells Populate Crypt">
+                    <figcaption>Over time, the stem cells divide and populate the entire crypt.</figcaption>
+                </figure>
                 <p class="p2" id = "Microscope-progress">Progress</p>
                 <p class="concise">I am very excited to be working on this project with Sarah Baka, Yianni Gabrielides,
                     Andy Hume and Zubair Chowdhury. This is kindly being sponsored by Cancer Research UK and has
@@ -32,10 +37,21 @@
                     methodology to help keep us as productive as productive as possible.</p>
             </div>
             <div class="col-xs-12 col-md-4">
-                <figure *ngIf="!useMobileStyle">
-                    <img src="../../images/ARiLogin.png" alt="ARi Login">
-                    <figcaption>ARi's login page.</figcaption>
-                </figure>
+                <ul class="image-column">
+                    <li><span>
+                        <figure *ngIf="!useMobileStyle">
+                            <img src="../../images/redandgreenclones.png" alt="Red, Green, Merge">
+                            <figcaption>The size of the red stem cells is determined in the plane
+                                where the green Paneth cells are brightest.</figcaption>
+                        </figure>
+                    </span></li>
+                    <li><span>
+                        <figure *ngIf="!useMobileStyle">
+                            <img src="../../images/CellsPopulateCrypt.png" alt="Cells Populate Crypt">
+                            <figcaption>Over time, the stem cells divide and populate the entire crypt.</figcaption>
+                        </figure>
+                    </span></li>
+                </ul>
             </div>
         </div>
         <hr>
@@ -254,6 +270,14 @@
     </div>
     <nav class="sidenav" *ngIf="!useMobileStyle" style="background-color: lightgray">
         <section class="sidenav-content">
+            <section class="nav-group">
+                <input id="microscope-sidenav-group" type="checkbox">
+                <a class="nav-link" onClick="document.getElementById('microscope-title').scrollIntoView({behavior: 'smooth'});">Stem Cell Detection</a>
+                <ul class="nav-list">
+                    <li><a class="nav-link" onClick="document.getElementById('microscope-spec').scrollIntoView({behavior: 'smooth'});">Overview</a></li>
+                    <li><a class="nav-link" onClick="document.getElementById('microscope-progress').scrollIntoView({behavior: 'smooth'});">Progress</a></li>
+                </ul>
+            </section>
             <section class="nav-group">
                 <input id="ARi-sidenav-group" type="checkbox">
                 <a class="nav-link" onClick="document.getElementById('ARi-title').scrollIntoView({behavior: 'smooth'});">ARi</a>
