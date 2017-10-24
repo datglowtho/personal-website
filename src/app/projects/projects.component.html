@@ -6,11 +6,17 @@
                 <p class="p2" id="Microscope-spec">Overview</p>
                 <p class="concise">Cancer Research UK is investigating the effects of interventions
                     on stem cell dynamics in the intestine. As part of their research, they acquire
-                    images of Paneth cells labelled with green fluorescent UEA-1, as well as tdTom-positive
-                    intestinal stem cells, and extract information about them at points of overlap (Figure 1).
-                    Currently, researchers have to manually operate confocal microscopes to find the points of
-                    interest in a sample and take images of them. This is feasible at the initial
-                    stage when they only have tens of tdTom-positive intestinal stem cells, but as
+                    images of intestinal crypts. They are looking for Paneth cells,
+                    labelled with green fluorescent UEA-1, and tdTom-positive
+                    intestinal stem cells. Once they have these images they need to measure how
+                    the stem cells are developing. Observing an image of one red stem cell growing
+                    around a green Paneth cell, they assign the stem cell a score between
+                    1/8 and 8/8. This is a measure of how much of the circumference of a crypt
+                    the stem cell surrounds. Currently, researchers have to manually operate confocal
+                    microscopes to find the regions of interest in a sample, take images of them
+                    and then tally how many stem cells are assigned each score.
+                    This is feasible at the initial stage when they only have tens
+                    of tdTom-positive intestinal stem cells, but as
                     the number of these cells proliferate with time, researchers have to manually
                     check hundreds – a time-consuming and impractical process.
                 </p>
@@ -22,19 +28,52 @@
                 <p class="concise">Our task is to design and implement a system that will automate a microscope scan,
                     returning relevant high-quality images to researchers. Ideally our system will also analyse the
                     images and take some basic measurements to further speed up the process of detecting
-                    tdTom-positive intestinal stem cells in crypts with labelled Paneth cells.</p>
+                    tdTom-positive intestinal stem cells in crypts with labelled Paneth cells. I am very excited to be
+                    working on this project with Sarah Baka, Yianni Gabrielides,
+                    Andy Hume and Zubair Chowdhury. This is kindly being sponsored
+                    by Cancer Research UK and has
+                    received funding from the Department of Computing at Imperial. We will be working on
+                    this project until January 2018 and I will update our progress below.</p>
                 <figure *ngIf="useMobileStyle">
                     <img src="../../images/CellsPopulateCrypt.png" alt="Cells Populate Crypt">
                     <figcaption>Over time, the stem cells divide and populate the entire crypt.</figcaption>
                 </figure>
                 <p class="p2" id = "Microscope-progress">Progress</p>
-                <p class="concise">I am very excited to be working on this project with Sarah Baka, Yianni Gabrielides,
-                    Andy Hume and Zubair Chowdhury. This is kindly being sponsored by Cancer Research UK and has
-                    received funding from the Department of Computing at Imperial. The project was started just
-                    last week and will continue until January 2018. Expect updates at least once a fortnight.</p>
-                <p class="concise">Currently we are laying down the plans for this project. We expect to write
-                    the vast majority of the code in Python and will be using the Kanban agile development
-                    methodology to help keep us as productive as productive as possible.</p>
+                <p class="concise">Our first two-week sprint finished on the 20th October. We spent the
+                first week gathering as much information as possible about the procedure we
+                aim to automate and the microscope we will be automating it with.
+                The microscope that we are able to use for tests at Imperial is a Leica TPS SP5.
+                This is a confocal microscope connected to a computer with software allowing
+                users to move the stage and take images, amongst other features. We
+                had initially hoped to use the same communication protocol this
+                software must use to send commands to the microscope from our
+                program. However, the documentation for it is not available publicly.
+                We contacted the authors of two repositories on Github aimed at communicating
+                with Leica microscopes, asking how we might be able to access the same
+                documentation they did. Both of them responded and said
+                the same thing. They advised us that the API they used for their
+                projects would not work on our version of the microscope and in
+                their experience had been rather buggy. Both of them recommended
+                we automate mouse and keyboard input to Leica's pre-existing software,
+                saying that while this approach may seem wrong, it will probably
+                get us further.</p>
+                <p class="concise">On the second week we split our group into two.
+                Sarah, Yianni and Zubair formed the image acquisition team, working
+                to intelligently acquire relevant images from the microscope. At time
+                of writing they have a program that can operate the software to move
+                the microscope's stage and take images. They are now working to
+                automate a full scan as efficiently as possible. Andy
+                and I are on the image analysis team, working to identify the
+                stem cells and assign scores to them. Currently our program
+                can take an image of a large region of many Paneth cells and
+                divide it up into multiple separate images that contain just one
+                cell, ignoring those that do not have a stem cell growing around them.
+                The next step is to run through these images, assigning scores.</p>
+                <figure *ngIf="useMobileStyle">
+                    <img src="../../images/DetectingRegions.jpg" alt="Region Detection">
+                    <figcaption>An image and its binary version after pre-processing. A contour detection function then
+                        easily finds the coordinates of the cells and the image is split up.</figcaption>
+                </figure>
             </div>
             <div class="col-xs-12 col-md-4">
                 <ul class="image-column">
@@ -49,6 +88,13 @@
                         <figure *ngIf="!useMobileStyle">
                             <img src="../../images/CellsPopulateCrypt.png" alt="Cells Populate Crypt">
                             <figcaption>Over time, the stem cells divide and populate the entire crypt.</figcaption>
+                        </figure>
+                    </span></li>
+                    <li><span>
+                        <figure *ngIf="!useMobileStyle">
+                            <img src="../../images/DetectingRegions.jpg" alt="Region Detection">
+                            <figcaption>An image and its binary version after pre-processing. A contour detection function then
+                                easily finds the coordinates of the cells and the image is split up.</figcaption>
                         </figure>
                     </span></li>
                 </ul>
