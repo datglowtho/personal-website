@@ -5,10 +5,12 @@
   "angular-cli": {},
   "scripts": {
     "start": "ng serve",
+    "build": "ng build",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test --single-run",
     "pree2e": "webdriver-manager update",
-    "e2e": "protractor protractor.config.js"
+    "e2e": "protractor protractor.config.js",
+    "rebuild": "npm rebuild node-sass"
   },
   "private": true,
   "dependencies": {

@@ -1,9 +1,9 @@
 <div class="content-container" >
     <div class="content-area">
         <div class="row">
-            <div class="col-xs-12 col-md-8" id="Microscope-title">
-                <h2>Automated Detection of Intestinal Stem Cells</h2>
-                <p class="p2" id="Microscope-spec">Overview</p>
+            <div class="col-xs-12 col-md-8" id="AutoDAC-title">
+                <h2>AutoDAC: Automated Detection of Intestinal Stem Cells</h2>
+                <p class="p2" id="AutoDAC-overview">Overview</p>
                 <p class="concise">Cancer Research UK is investigating the effects of interventions
                     on stem cell dynamics in the intestine. As part of their research, they acquire
                     images of intestinal crypts. They are looking for Paneth cells,
@@ -12,7 +12,7 @@
                     the stem cells are developing. Observing an image of one red stem cell growing
                     around a green Paneth cell, they assign the stem cell a score between
                     1/8 and 8/8. This is a measure of how much of the circumference of a crypt
-                    the stem cell surrounds. Currently, researchers have to manually operate confocal
+                    the stem cell surrounds. Before this project, researchers had to manually operate confocal
                     microscopes to find the regions of interest in a sample, take images of them
                     and then tally how many stem cells are assigned each score.
                     This is feasible at the initial stage when they only have tens
@@ -25,55 +25,69 @@
                     <figcaption>The size of the red stem cells is determined in the plane
                         where the green Paneth cells are brightest.</figcaption>
                 </figure>
-                <p class="concise">Our task is to design and implement a system that will automate a microscope scan,
-                    returning relevant high-quality images to researchers. Ideally our system will also analyse the
-                    images and take some basic measurements to further speed up the process of detecting
-                    tdTom-positive intestinal stem cells in crypts with labelled Paneth cells. I am very excited to be
-                    working on this project with Sarah Baka, Yianni Gabrielides,
-                    Andy Hume and Zubair Chowdhury. This is kindly being sponsored
-                    by Cancer Research UK and has
-                    received funding from the Department of Computing at Imperial. We will be working on
-                    this project until January 2018 and I will update our progress below.</p>
+                <p class="concise">Our task automate this process for the researchers. We created a system that controlled
+                    the microscope, taking relevant high-quality images and analysing them to produce the same tally a
+                    researcher would. I worked on this project with Sarah Baka, Yianni Gabrielides,
+                    Andy Hume and Zubair Chowdhury for the Imperial Computing 3rd Year Group Project. It was sponsored by Cancer Research UK and
+                    received funding from the Department of Computing at Imperial. The final result is being used at
+                    Cancer Research. I worked almost exclusively on the image analysis side of the project. Details of this
+                    are below.</p>
                 <figure *ngIf="useMobileStyle">
                     <img src="../../images/CellsPopulateCrypt.png" alt="Cells Populate Crypt">
                     <figcaption>Over time, the stem cells divide and populate the entire crypt.</figcaption>
                 </figure>
-                <p class="p2" id = "Microscope-progress">Progress</p>
-                <p class="concise">Our first two-week sprint finished on the 20th October. We spent the
-                first week gathering as much information as possible about the procedure we
-                aim to automate and the microscope we will be automating it with.
-                The microscope that we are able to use for tests at Imperial is a Leica TPS SP5.
-                This is a confocal microscope connected to a computer with software allowing
-                users to move the stage and take images, amongst other features. We
-                had initially hoped to use the same communication protocol this
-                software must use to send commands to the microscope from our
-                program. However, the documentation for it is not available publicly.
-                We contacted the authors of two repositories on Github aimed at communicating
-                with Leica microscopes, asking how we might be able to access the same
-                documentation they did. Both of them responded and said
-                the same thing. They advised us that the API they used for their
-                projects would not work on our version of the microscope and in
-                their experience had been rather buggy. Both of them recommended
-                we automate mouse and keyboard input to Leica's pre-existing software,
-                saying that while this approach may seem wrong, it will probably
-                get us further.</p>
-                <p class="concise">On the second week we split our group into two.
-                Sarah, Yianni and Zubair formed the image acquisition team, working
-                to intelligently acquire relevant images from the microscope. At time
-                of writing they have a program that can operate the software to move
-                the microscope's stage and take images. They are now working to
-                automate a full scan as efficiently as possible. Andy
-                and I are on the image analysis team, working to identify the
-                stem cells and assign scores to them. Currently our program
-                can take an image of a large region of many Paneth cells and
-                divide it up into multiple separate images that contain just one
-                cell, ignoring those that do not have a stem cell growing around them.
-                The next step is to run through these images, assigning scores.</p>
+                <p class="p2" id = "AutoDAC-how-it-works">How It Works</p>
+                <p class="concise">The image analysis program is given images of a region of tissue and returns a tally
+                    with the number of stem cells receiving each score. It does this in two parts, the first is segmenting
+                    the images into many smaller images, each containing just one stem cell. The second is then to assign a
+                    score to each of these images. The green crypts are green regions on the images given to the program,
+                    and the stem cells we are interested in appear red. To segment the cells we first transform the green
+                    channel into a binary image where crypts are white. We then detect all the connected white regions,
+                    and check the red channel in these areas. Where a crypt has enough red around it, we think a stem cell
+                    has been found, and we pass this crypt onto the scorer. There's a bit more to it than that, but hopefully
+                    that gives a general idea. </p>
+                <p class="concise">The scorer than attempts to assign a score of 1-8 to these cells. This scoring sytem is used
+                    as it fits with the current models at Cancer Research UK. They use this because it is a human-assignable
+                    score to measure how far the cells have grown around a crypt. Think of it as a "slices of pizza" type
+                    of score. To assign this we split the image of a cell into 32 sectors around the crypt's centroid,
+                    and counted how many had enough coverage in the image's red channel to count as filled. We then used
+                    this to assign the scores between 1 and 8. Again, this is a rough overview and some of the more minute
+                    details have been omitted for brevity.</p>
                 <figure *ngIf="useMobileStyle">
-                    <img src="../../images/DetectingRegions.jpg" alt="Region Detection">
-                    <figcaption>An image and its binary version after pre-processing. A contour detection function then
-                        easily finds the coordinates of the cells and the image is split up.</figcaption>
+                    <img src="../../images/imageanalysis.png" alt="Image analysis">
+                    <figcaption>The algorithm first identifies stem cells, then assigns a score between 1 and 8</figcaption>
                 </figure>
+                <p class="p2" id = "AutoDAC-development">Development</p>
+                <p class="concise">Creating this image scoring algorithm was different from much of the other work I have
+                    done so far. Unlike other projects, there was no clear implementation for analysing and assigning
+                    these scores and the work was far more research-based. As such, we tried many different approaches
+                    and refined the algorithm over time. We did this with a growing supply of test data, that was
+                    continually added to by our contact at CRUK as she continued to perform these scans herself
+                    during development. To aid the gathering of this data, we created a small application known as the
+                    Quick Scorer. Once an early version of the segmenter was finished, we made this for the researchers
+                    to reduce their time taken to count cells and make a tally, as well as gathering data at the same time.
+                    It showed the segmented cells to researchers one by one, and they pressed a key between 1 and 8 to
+                    score the cell. At the end a tally was output for them, and a usable breakdown of scores and images
+                    was produced that they could send to us.</p>
+                <p class="concise">We analysed the data in a number of ways to help improve the scorer (and the
+                    segmenter where we noticed it producing unwanted images). These included testing which approaches
+                    to the algorithms produced more accurate results, and running searches for best values
+                    of parameters in our program such as noise threshold. We measured performance by producing
+                    confusion matrices and calculating sensitivity and precision rates.</p>
+                <p class="concise">The final program, along with many scripts for organising and analysing our test data, was
+                    written in Python. We used opencv, an excellent Computer Vision library, to help with image
+                    processing.</p>
+                <figure *ngIf="useMobileStyle">
+                    <img src="../../images/autodac_group.jpg" alt="Group photo">
+                </figure>
+                <p class="p2" id="AutoDAC-extras">Extras</p>
+                <p class="concise">AutoDAC achieved "stand-out" project status, awarded to projects placing 3rd-5th out
+                    of over 30 groups working on a variety of group projects. Since the conclusion of the main project
+                    period at Imperial, we continued some minor work on the project to deploy it successfully at Cancer
+                    Research UK where it is now used, and published it as an open source project so others can build on it.
+                </p>
+                <p class="concise">The project repository is published on
+                    <a href="https://github.com/AutoDAC/AutoDAC">Github</a>.</p>
             </div>
             <div class="col-xs-12 col-md-4">
                 <ul class="image-column">
@@ -87,14 +101,19 @@
                     <li><span>
                         <figure *ngIf="!useMobileStyle">
                             <img src="../../images/CellsPopulateCrypt.png" alt="Cells Populate Crypt">
-                            <figcaption>Over time, the stem cells divide and populate the entire crypt.</figcaption>
+                            <figcaption>Over time, the stem cells divide and populate the entire crypt. This growth is scored between
+                    1 and 8, like a count of "pizza slices".</figcaption>
                         </figure>
                     </span></li>
                     <li><span>
                         <figure *ngIf="!useMobileStyle">
-                            <img src="../../images/DetectingRegions.jpg" alt="Region Detection">
-                            <figcaption>An image and its binary version after pre-processing. A contour detection function then
-                                easily finds the coordinates of the cells and the image is split up.</figcaption>
+                            <img src="../../images/imageanalysis.png" alt="Image analysis">
+                            <figcaption>The algorithm first identifies stem cells, then assigns a score between 1 and 8</figcaption>
+                        </figure>
+                    </span></li>
+                    <li><span>
+                        <figure *ngIf="!useMobileStyle">
+                            <img src="../../images/autodac_group.jpg" alt="Group photo">
                         </figure>
                     </span></li>
                 </ul>
@@ -107,8 +126,7 @@
                 <img *ngIf="useMobileStyle" src="../../images/ARi_logo.png"
                      alt="ARi logo" class="mobile-logo"/>
                 <p class="p2" id="ARi-spec">The Spec</p>
-                <p class="concise">ARi was made as part of the WebApps project in the summer
-                    term of the second year Computing course at Imperial. The app could be desktop
+                <p class="concise">ARi was made for the Imperial Computing 2nd year Summer WebApps project. The app could be desktop
                     or mobile, had to allow for rich user interactions (e.g. messaging, scoreboards, etc.) and
                     use a database to maintain some internal state, such as user-specific data. Additionally,
                     this project is run in conjunction with a Human Centred Design (HCD) course from the Royal College of Art.
@@ -232,11 +250,11 @@
                 <p class="concise">I worked on ARi with Sarah Baka, Ruhi Choudhury, Josh Cooper. I was predominantly working on
                     the back-end, and wrote about 80 percent of the Django code. At all times I aimed for the back-end code to
                     be as clean and well-designed as possible so that in the future new features could be added with ease. I'm really proud
-                    with the end result but am unfortunately unable to share it on my public GitHub at this time.
+                    with the end result but am unfortunately unable to share it on my public GitHub at a colleague's request.
                 <p class="concise">ARi received very high marks and we have been invited to present it at upcoming interview days.
                 Professor Susan Eisenbach expressed interest in seeing ARi developed further and offered to be our supervisor if we wished
-                to continue work on ARi for the third year group project. Ruhi is currently working on it in a different group, aiming to make it
-                a fully featured system that the department can actually use.
+                to continue work on ARi for the third year group project. We all chose to move on, but the project was pitched
+                as a base for other groups, aiming to see it grow into a fully featured system that the department can actually use.
             </div>
             <div class="col-xs-12 col-md-4">
                 <ul class="image-column">
@@ -385,11 +403,13 @@
     <nav class="sidenav" *ngIf="!useMobileStyle" style="background-color: lightgray">
         <section class="sidenav-content">
             <section class="nav-group">
-                <input id="microscope-sidenav-group" type="checkbox">
-                <a class="nav-link" onClick="document.getElementById('Microscope-title').scrollIntoView({block: 'start', inline: 'nearest', behavior: 'smooth'});">Stem Cell Detection</a>
+                <input id="AutoDAC-sidenav-group" type="checkbox">
+                <a class="nav-link" onClick="document.getElementById('AutoDAC-title').scrollIntoView({block: 'start', inline: 'nearest', behavior: 'smooth'});">Stem Cell Detection</a>
                 <ul class="nav-list">
-                    <li><a class="nav-link" onClick="document.getElementById('Microscope-spec').scrollIntoView({block: 'start', inline: 'nearest', behavior: 'smooth'});">Overview</a></li>
-                    <li><a class="nav-link" onClick="document.getElementById('Microscope-progress').scrollIntoView({block: 'start', inline: 'nearest', behavior: 'smooth'});">Progress</a></li>
+                    <li><a class="nav-link" onClick="document.getElementById('AutoDAC-overview').scrollIntoView({block: 'start', inline: 'nearest', behavior: 'smooth'});">Overview</a></li>
+                    <li><a class="nav-link" onClick="document.getElementById('AutoDAC-how-it-works').scrollIntoView({block: 'start', inline: 'nearest', behavior: 'smooth'});">How It Works</a></li>
+                    <li><a class="nav-link" onClick="document.getElementById('AutoDAC-development').scrollIntoView({block: 'start', inline: 'nearest', behavior: 'smooth'});">Development</a></li>
+                    <li><a class="nav-link" onClick="document.getElementById('AutoDAC-extras').scrollIntoView({block: 'start', inline: 'nearest', behavior: 'smooth'});">Extras</a></li>
                 </ul>
             </section>
             <section class="nav-group">
